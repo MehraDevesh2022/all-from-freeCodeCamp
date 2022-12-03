@@ -218,3 +218,75 @@ ReactDOM.render(<WebPage />, document.getElementById("root"))
 
 */
 
+
+/**
+Mini Challenge 11:
+its own component called "Header"
+Move the 'header' element from WebPage into 
+function WebPage(){
+  return(
+    <React.Fragment>
+        <header>
+            <nav>
+                  <img src="../1-task-active/logo.png"/>
+            </nav>
+        </header>
+          <h1>Reasons I'm excited to learn React</h1>
+        <ol>
+              <li>I wanna something from my life</li>
+              <li>I don't want be use less</li>
+              <li>I wanna good software engineer</li>
+              <li>I wanna good job as well </li>
+        </ol>
+          <h3> &copy; 2022 Mehra development. All rights reserved.</h3>
+      </React.Fragment>
+  )
+}
+
+ReactDOM.render(<WebPage />, document.getElementById("root"))
+
+
+******solution :
+function Header(){
+    return(
+        <React.Fragment>
+            <header>
+                <nav>
+                    <img src="../1-task-active/logo.png" />
+                </nav>
+            </header>
+
+        </React.Fragment>
+    )
+}
+
+function WebPage(){
+    return(
+        <React.Fragment>
+           <div>
+                <h1>Reasons I'm excited to learn React</h1>
+                <ol>
+                    <li>I wanna something from my life</li>
+                    <li>I don't want be use less</li>
+                    <li>I wanna good software engineer</li>
+                    <li>I wanna good job as well </li>
+                </ol>
+           </div>
+           
+        </React.Fragment>
+    )
+}
+
+function Footer(){
+    return(
+        <React.Fragment>
+            <h3> &copy; 2022 Mehra development. All rights reserved.</h3> 
+        </React.Fragment>
+    )
+}
+ReactDOM.render(<div><Header/><WebPage/><Footer/></div> , document.getElementById("root"))
+
+
+*/
+
+
