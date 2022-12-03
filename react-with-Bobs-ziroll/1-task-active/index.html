@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+    <!-- this link used for react method and property -->
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <!-- this link will provide react dom features -->
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+
+    <!-- this for jsx to js bable link -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>Document</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="root"></div>
+
+   <script type="text/babel">
+      
+      
+      function Header(){
+        return (
+      <React.Fragment>
+        
+       <div class="header">
+         <div class="logo">
+            <img src ="./logo.png" alt ="img"/>
+            </div>
+            <div class="title">   
+                <h2>React Cousrse-Project 1</h2>
+                </div>
+        </div>
+        </React.Fragment>
+
+
+        )
+       }
+        function MainBody(){
+        return (
+             <React.Fragment>
+              <div class="main">
+                <div class="main-heading">
+                   <h1>
+                    Fun fact about React
+                    </h1>
+                  </div>
+                    <div class="main-content">
+                      <div class="main-text">
+                          <ul>
+                            <li>Was first released in 2013</li>
+                            <li>Was orginally creadted by Jorden Walke</li>
+                            <li>Is maintainde by Facebook</li>
+                            <li>Powers thousands of enterprise aoos, including mobile apps</li>
+                            <li>Has well over 100k stars on GitHub</li>
+                            </ul>
+                        </div>
+                      <div class="main-img">
+                        <img src ="./reactjs-icon 2.png" alt ="react-img"/>
+                        </div>
+                      </div>
+
+
+                
+                </div>
+              
+              
+              </React.Fragment>
+
+
+        )
+       }
+
+
+
+          function Parent(){
+           return(
+             <React.Fragment>
+            <Header/>
+            <MainBody/>
+            </React.Fragment>
+           )
+          }  
+  ReactDOM.render(<Parent/>, document.getElementById("root"));
+    
+    </script>
+        
+</body>
+</html>
+  
