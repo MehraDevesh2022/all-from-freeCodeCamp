@@ -32,8 +32,8 @@ ReactDOM.render(<MyNav/> , document.getElementById("root"));
 
 */
 
-// react is declractive =>  declractive mean we need to tell computer what should be done in small step
-// vanila js is imparative => we need to tell computer what to do with step by step
+// react is declractive =>  declractive mean we need to tell computer what should be done .. like in coffe shop order for coffee and thats it 
+// vanila js is imparative => we need to tell computer what to do with step by step.. like making coffee by ownself from scratch
 
 /*
 challange 4=> write code in vanila js imparative example 
@@ -58,10 +58,10 @@ ReactDOM.render(<h1 className ="header">Hello React, I am in</h1> , document.get
 
 
 /*
-challange 6 => wrap react jsx into variavle =>
+Challange 6 => wrap react jsx into variable =>
 const Val = (
  <div>
-  <h1  className ="header">hello Recat , i am in</h1>
+  <h1  className ="header">hello Recat, i am in</h1>
   <p>this is Jsx</p>
 </div>
 )
@@ -290,3 +290,60 @@ ReactDOM.render(<div><Header/><WebPage/><Footer/></div> , document.getElementByI
 */
 
 
+
+
+
+
+function Header(){
+    return(
+        <React.Fragment>
+        <nav className ="header">
+                <img src="../1-task-active/logo.png" />
+              <li>Price</li>
+                <li>About</li>
+                <li>Contact</li>
+        </nav>
+
+        </React.Fragment>
+    )
+}
+
+function MainPage() {
+    return (
+        <React.Fragment>
+            <div className ="Main">
+                <h1>Reasons I'm excited to learn React</h1>
+                <ol>
+                    <li>I wanna something from my life</li>
+                    <li>I don't want be use less</li>
+                    <li>I wanna good software engineer</li>
+                    <li>I wanna good job as well </li>
+                </ol>
+            </div>
+
+        </React.Fragment>
+    )
+}
+
+
+function Footer() {
+    return (
+        <React.Fragment>
+            <h3> &copy; 2022 Mehra development. All rights reserved.</h3>
+        </React.Fragment>
+    )
+
+    }
+
+
+    function Parent(){
+        return(
+            <React.Fragment>
+                <Header />,
+                <MainPage />,
+                <Footer />
+            </React.Fragment>
+        )
+    }
+
+ReactDOM.render(<div><Parent/></div>, document.getElementById("root"))
