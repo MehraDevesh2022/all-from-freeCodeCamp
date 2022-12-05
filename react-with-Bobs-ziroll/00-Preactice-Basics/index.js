@@ -299,7 +299,7 @@ Using flexbox, line up the nav items horizontally, and put them inline with the 
 
 
 >>>>>>>> solution >>>>>>>>>>>>>>>>>>
-
+*/
 function Header() {
     return (
         <React.Fragment>
@@ -357,7 +357,7 @@ function Parent() {
 
 ReactDOM.render(<div><Parent /></div>, document.getElementById("root"))
 
-*/
+
 
 
 
