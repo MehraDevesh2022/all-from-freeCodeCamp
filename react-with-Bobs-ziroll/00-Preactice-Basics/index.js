@@ -71,7 +71,7 @@ ReactDOM.render(Val, document.getElementById("root"));
 */
 
 
-/* challange 7: => Crate a  Navbar in JSX
+/* challenge 7: => Crate a  Navbar in JSX
   - Use the  semantic 'nav' elemnet as the parent wrapper
   - Have an h1 elemet with the brand name of your 'website'
   - Insert and unorder list for the other nav elements
