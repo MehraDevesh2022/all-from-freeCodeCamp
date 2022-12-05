@@ -1,0 +1,40 @@
+body{
+ 
+  background: #282D35;
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: 'Inter', sans-serif;
+}
+.nav{
+    display: flex;
+    padding: 15px;
+     height: 5rem;
+    background: #21222A;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+
+}
+.nav--icon{
+    height: 3rem;
+    padding: 5px;
+
+}
+.nav--icontext{
+   
+     margin-right: auto;
+     color: #61DAFB;
+    font-weight: 700;
+    font-size: 2rem;
+        font-family: 'Inter', sans-serif;
+    
+}
+.nav--text{
+    margin: 0;
+      padding: 10px;
+      font-weight: 600;
+      font-size: 1.2rem;
+      font-family: 'Inter', sans-serif;
+}
+
+
