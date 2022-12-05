@@ -93,7 +93,7 @@ ReactDOM.render(Val, document.getElementById("root"));
   */
 
 
- /*
+/*
 
 Challenge 8: find out what happens if we try to append JSX to our div#root using.append() instead of ReactDOM
 1. Create a sample page in JSX(≥ 4 elements) and save them in a variable
@@ -103,15 +103,15 @@ Challenge 8: find out what happens if we try to append JSX to our div#root using
 
 
 const Page = (
-    <div>
-        <h1>Hello React.com</h1>
-        <h2>Hello React.com2</h2>
-        <ul>
-            <li>Menu</li>
-            <li>About</li>
-            <li>Page</li>
-        </ul>
-        </div>
+   <div>
+       <h1>Hello React.com</h1>
+       <h2>Hello React.com2</h2>
+       <ul>
+           <li>Menu</li>
+           <li>About</li>
+           <li>Page</li>
+       </ul>
+       </div>
 
 )
 // it returns the object . JSX is return plain object to the dom and ReactDOM compile it and convert Browser undstandable code
@@ -290,19 +290,28 @@ ReactDOM.render(<div><Header/><WebPage/><Footer/></div> , document.getElementByI
 */
 
 
+/*
+ challange : 12 added
+
+Add an `ul inside the Header's `nav` and create the following `li`s: "Pricing", "About", & "Contact"
+Using flexbox, line up the nav items horizontally, and put them inline with the React logo.
+- Change the image styling to happen in CSS instead of in-line For practice, add a new class to the image in order to style it 
 
 
+>>>>>>>> solution >>>>>>>>>>>>>>>>>>
 
-
-function Header(){
-    return(
+function Header() {
+    return (
         <React.Fragment>
-        <nav className ="header">
-                <img src="../1-task-active/logo.png" />
-              <li>Price</li>
-                <li>About</li>
-                <li>Contact</li>
-        </nav>
+            <nav className="nav">
+                <img src="../1-task-active/logo.png" className="nav-img" />
+                <ul>
+                    <li>Price</li>
+                    <li>About</li>
+                    <li>Contact</li>
+
+                </ul>
+            </nav>
 
         </React.Fragment>
     )
@@ -311,9 +320,9 @@ function Header(){
 function MainPage() {
     return (
         <React.Fragment>
-            <div className ="Main">
-                <h1>Reasons I'm excited to learn React</h1>
-                <ol>
+            <div className="Main">
+                <h1 className="main-heading">Reasons I'm excited to learn React</h1>
+                <ol className="main-list">
                     <li>I wanna something from my life</li>
                     <li>I don't want be use less</li>
                     <li>I wanna good software engineer</li>
@@ -329,21 +338,28 @@ function MainPage() {
 function Footer() {
     return (
         <React.Fragment>
-            <h3> &copy; 2022 Mehra development. All rights reserved.</h3>
+            <h3 className="footer"> &copy; 2022 Mehra development. All rights reserved.</h3>
         </React.Fragment>
     )
 
-    }
+}
 
 
-    function Parent(){
-        return(
-            <React.Fragment>
-                <Header />,
-                <MainPage />,
-                <Footer />
-            </React.Fragment>
-        )
-    }
+function Parent() {
+    return (
+        <React.Fragment>
+            <Header />
+            <MainPage />
+            <Footer />
+        </React.Fragment>
+    )
+}
 
-ReactDOM.render(<div><Parent/></div>, document.getElementById("root"))
+ReactDOM.render(<div><Parent /></div>, document.getElementById("root"))
+
+*/
+
+
+
+
+
