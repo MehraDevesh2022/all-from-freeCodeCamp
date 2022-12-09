@@ -299,7 +299,8 @@ Using flexbox, line up the nav items horizontally, and put them inline with the 
 
 
 >>>>>>>> solution >>>>>>>>>>>>>>>>>>
-*/
+
+
 function Header() {
     return (
         <React.Fragment>
@@ -357,9 +358,112 @@ function Parent() {
 
 ReactDOM.render(<div><Parent /></div>, document.getElementById("root"))
 
+*/
+
+   /*
+* Challenge: finish off the h1 below so it says
+* "Hello Joe Schmoe! "
+
+function Hello(){
+    const firstName = "Joe";
+    const LastName = "Schome";
+    return (
+      <React.Fragment>
+        <h1>Hello {firstName + " " + LastName}</h1>
+      </React.Fragment>
+    )
+}
+
+function Footer() {
+    return (
+        <React.Fragment>
+            <h3 className="footer"> &copy; 2022 Mehra development. All rights reserved.</h3>
+        </React.Fragment>
+    )
+
+}
+
+
+   */
+
+
+import React from "react";
+
+/* Challenge:
+
+- Create a Contact.js component in another file
+- Move one of the contact card divs below into that file
+- import and render 4 instances of that contact card
+    - Think ahead: what's the problem with doing it this way?
+*/
+
+function App() {
+  return (
+    <div className="contacts">
+      <div className="contact-card">
+        <img src="./images/mr-whiskerson.png" />
+        <h3>Mr. Whiskerson</h3>
+        <div className="info-group">
+          <img src="./images/phone-icon.png" />
+          <p>(212) 555-1234</p>
+        </div>
+        <div className="info-group">
+          <img src="./images/mail-icon.png" />
+          <p>mr.whiskaz@catnap.meow</p>
+        </div>
+      </div>
+
+      <div className="contact-card">
+        <img src="./images/fluffykins.png" />
+        <h3>Fluffykins</h3>
+        <div className="info-group">
+          <img src="./images/phone-icon.png" />
+          <p>(212) 555-2345</p>
+        </div>
+        <div className="info-group">
+          <img src="./images/mail-icon.png" />
+          <p>fluff@me.com</p>
+        </div>
+      </div>
+
+      <div className="contact-card">
+        <img src="./images/felix.png" />
+        <h3>Felix</h3>
+        <div className="info-group">
+          <img src="./images/phone-icon.png" />
+          <p>(212) 555-4567</p>
+        </div>
+        <div className="info-group">
+          <img src="./images/mail-icon.png" />
+          <p>thecat@hotmail.com</p>
+        </div>
+      </div>
+
+      <div className="contact-card">
+        <img src="./images/pumpkin.png" />
+        <h3>Pumpkin</h3>
+        <div className="info-group">
+          <img src="./images/phone-icon.png" />
+          <p>(0800) CAT KING</p>
+        </div>
+        <div className="info-group">
+          <img src="./images/mail-icon.png" />
+          <p>pumpkin@scrimba.com</p>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 
 
 
 
+
+
+
+
+
+ReactDOM.render( <App></App>  ,  document.getElementById("root")
+);
 
