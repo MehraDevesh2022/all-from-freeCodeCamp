@@ -1,29 +1,23 @@
-export default function Card(){
-    return (
-      <>
-        <div className="card">
-          <img
-            src={require("./component/card1.png")}
-            alt=""
-            className="card-img"
-          />
-          <div className="card-stats">
-            <span>
-              <img
-                src={require("./component/Star1.png")}
-                alt=""
-                className="card-star"
-              />
-            </span>
-            <span>5.0</span>
-            <span className="greay card-text">(6)</span>
-            <span className="greay">.USA</span>
-          </div>
-          <p className="card-text">Life lesson with Kaite Zaferes</p>
-          <p className="card-text">
-            <span className="bold">From $136 </span>/ person
-          </p>
+
+export default function Card(props){
+  console.log(props.starImg); 
+  return (
+    <>
+      <div className="card">
+        <img src={props.img} alt="" className="card-img" />
+        <div className="card-stats">
+          <span>
+            <img src={props.starImg} alt="" className="card-star" />
+          </span>
+          <span>{props.rating}</span>
+          <span className="greay card-text">({props.vote})</span>
+          <span className="greay">{props.country}</span>
         </div>
-      </>
-    );
+        <p className="card-text">{props.text}</p>
+        <p className="card-text">
+          <span className="bold">From {props.price} </span>/ person
+        </p>
+      </div>
+    </>
+  );
 }
