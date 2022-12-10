@@ -1,26 +1,28 @@
 import Hero from "./component/Hero";
 import Nav from "./component/Nav";
 import "./component/style.css"
-import "./component/style.css"
-import Card from "./Card";
-const image = require("./component/card1.png");
-const StarImg = require("./component/Star1.png");
+import Card from "./component/Card";
+import Data from "./Data";
+
 function App() {
+      let card  = Data.map((item)=>{
+       
+       return  ( <Card
+            key = {item.id}
+            cards =   {item}
+          />)
+
+      }) 
+ 
   return (
     <>
 <Nav/>
-<Hero/>
-<Card
-        img={image}
-        starImg={StarImg}
-        rating={5.0}
-        vote={6}
-        text={"Life lesson with Kaite Zaferes"}
-        country={".USA"}
+{/* <Hero/> */}
+   <section className="card-list">
+        {card}
+   </section>
+ 
 
-        price={"$136"}
-
-/>
     </>
 );
 
