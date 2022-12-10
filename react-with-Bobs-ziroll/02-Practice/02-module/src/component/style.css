@@ -13,7 +13,7 @@ nav {
 }
 section {
   width: 100%;
-  height: 416px;
+  height: 476px;
   display: flex;
   flex-direction: column;
   padding: 30px;
@@ -23,8 +23,8 @@ section {
   align-self: center;
   border-radius: 8.949999809265137px;
   padding: 20px;
-  max-width: 400px;
-  height: 232px;
+  max-width: 500px;
+  height: 400px;
   margin-bottom: 20px;
 }
 .hero-heading {
