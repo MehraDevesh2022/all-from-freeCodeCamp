@@ -61,7 +61,7 @@ section {
 .card-list {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap : wrap;
 }
 .card-img {
   width: 100%;
