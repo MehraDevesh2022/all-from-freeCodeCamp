@@ -1,10 +1,10 @@
 export default function Card(props) {
-  console.log(props.cards.text);
+  console.log(props.text);
   let stock = "";
 
-  if (props.cards.openSpots == 0) {
+  if (props.openSpots == 0) {
     stock = "Sold out";
-  } else if (props.cards.location == "Online") {
+  } else if (props.location == "Online") {
     stock = "Online";
   }
   return (
@@ -12,24 +12,24 @@ export default function Card(props) {
       <div className="card">
         {stock && <div className="card-status">{stock}</div>}
 
-        <img src={props.cards.coverImg} alt="" className="card-img" />
+        <img src={props.coverImg} alt="" className="card-img" />
         <div className="card-stats">
           <span>
             <img
-              src={props.cards.starImg}
+              src={props.starImg}
               alt=""
               className="card-star card--stats"
             />
           </span>
-          <span className="card--stats">{props.cards.stats.rating}</span>
+          <span className="card--stats">{props.stats.rating}</span>
           <span className="greay card-text  card--stats">
-            ({props.cards.stats.reviewCount})
+            ({props.stats.reviewCount})
           </span>
-          <span className="greay"> .{props.cards.location}</span>
+          <span className="greay"> .{props.location}</span>
         </div>
-        <p className="card-text">{props.cards.title}</p>
+        <p className="card-text">{props.title}</p>
         <p className="card-text">
-          <span className="bold">From ${props.cards.price} </span>/ person
+          <span className="bold">From ${props.price} </span>/ person
         </p>
       </div>
     </>
