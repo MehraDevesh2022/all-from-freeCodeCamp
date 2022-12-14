@@ -5,9 +5,7 @@
 }
 
 .nav-bar{
-      
-
-    height: 65px;
+      height: 65px;
     color: white;
     display: flex;
     align-items: center;
@@ -49,6 +47,7 @@ form {
     font-family: "Karla", sans-serif;
     border-radius: 5px;
     border: 2px solid #D5D4D8;
+    font-size: 20px;
     text-indent: 10px;
 }
 
@@ -64,5 +63,30 @@ form {
     color: white;
    cursor: pointer;
 }
+@media only screen and (max-width: 800px){
+	.nav-bar{
+    height: 50px;
+  }
+  .nav--name{
+    font-weight: 600;
+font-size: 1.3rem;
 
+  }
+  .nav--title{
+font-size: .90rem;
+font-weight: 400;
+
+
+}
+.form--input{
+    height: 35px;
+    font-size: 15px;
+   
+}
+.form--button{
+   height: 45px;
+    width:89vw;
+     font-size: 1rem;
+}
+}
 
