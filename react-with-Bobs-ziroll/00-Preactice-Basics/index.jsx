@@ -395,9 +395,8 @@ import React from "react";
 - Move one of the contact card divs below into that file
 - import and render 4 instances of that contact card
     - Think ahead: what's the problem with doing it this way?
-*/
 
-function App() {
+    function App() {
   return (
     <div className="contacts">
       <div className="contact-card">
@@ -459,11 +458,36 @@ function App() {
 
 
 
+    */
+
+
+
+ 
+  /**
+   * Challenge: Set up state to track our count (initial value is 0)
+   */
+
+
+  function App() {
+    return (
+      <div className="counter">
+        <button className="counter--minus">–</button>
+        <div className="counter--count">
+          <h1>0</h1>
+        </div>
+        <button className="counter--plus">+</button>
+      </div>
+    );
+  }
 
 
 
 
 
-ReactDOM.render( <App></App>  ,  document.getElementById("root")
+
+
+
+
+ReactDOM.render( <div>hello</div>  ,  document.getElementById("root")
 );
 
