@@ -4,6 +4,8 @@
  
 }
 
+
+
 .nav-bar{
       height: 65px;
     color: white;
@@ -35,6 +37,7 @@ font-weight: 500;
 }
 main{
   padding: 37px;
+  
 }
 form {
     display: grid;
@@ -62,6 +65,14 @@ form {
     background: linear-gradient(90.41deg, #711F8D 1.14%, #A818DA 100%);
     color: white;
    cursor: pointer;
+}
+.main-img{
+  
+  max-width:100%vw;
+  height: auto;
+padding: 10px;
+ 
+
 }
 @media only screen and (max-width: 800px){
 	.nav-bar{
