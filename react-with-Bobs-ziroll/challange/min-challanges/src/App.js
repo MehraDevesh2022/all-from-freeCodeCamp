@@ -3,27 +3,38 @@ import Box2 from "./component/Box2";
 import Box3 from "./component/Box3";
 import React from "react";
 import boxes from "./component/boxes";
+import jokesData from "./component/jokesData";
+import Joke from "./component/Joke1";
 function App() {
-  const [squares, setSquares] = React.useState(boxes)
+  // const [squares, setSquares] = React.useState(boxes)
 
-  const isTogle = (propID)=>{
-    let newARR  =  squares.map(item =>{
-          //  if(item.id ===propID){
-          //   return {
-          //     id : item.id,
-          //     on : !item.on
-          //   }
-          //  }else{
-          //   return item;
-          //  }
+  // joke challange :
+  const [isShown, setIsShwon] = React.useState(false)
 
-          return item.id  === propID ? {...item , on : !item.on} : item
-          })
+  // const isTogle = (propID)=>{
+  //   let newARR  =  squares.map(item =>{
+  //         //  if(item.id ===propID){
+  //         //   return {
+  //         //     id : item.id,
+  //         //     on : !item.on
+  //         //   }
+  //         //  }else{
+  //         //   return item;
+  //         //  }
 
-        setSquares([...newARR])
+  //         return item.id  === propID ? {...item , on : !item.on} : item
+  //         })
+
+  //       setSquares([...newARR])
  
-  }
+  // }
 
+
+  // Joke1.jsx
+  const isToggle = () => {
+    setIsShwon(prvVal => !prvVal)
+  }
+ 
 
   return (
     <div className="App">
@@ -37,11 +48,25 @@ function App() {
 
          {/* box3 */}
 
-     {squares.map(square =>(
+     {/* {squares.map(square =>(
        <Box3 mode={square}
            Toggle={isTogle}
             key ={square.id}   />
-     ))}
+     ))} */}
+
+          {/* Jokes */}
+     {jokesData.map(joke =>(
+      //  console.log(joke);
+       <Joke  key = {joke.id} 
+              myJoke ={joke}
+              IsShown ={isShown}
+              isToggle = {isToggle}
+               
+       />
+    
+    ) )}
+     
+
     </div>
   );
 }
