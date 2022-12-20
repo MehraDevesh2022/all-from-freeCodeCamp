@@ -6,6 +6,7 @@ import boxes from "./component/boxes";
 import jokesData from "./component/jokesData";
 import Joke from "./component/Joke1";
 import AndOptr from "./component/AndAndOptr";
+import AndAndOptr2 from "./component/AndAndOptr2";
 function App() {
   // const [squares, setSquares] = React.useState(boxes)
 
@@ -59,8 +60,11 @@ function App() {
               />
     
     ) )}
-    
+      {/* And opt1 */}
     {/* <AndOptr/>  */}
+
+
+      <AndAndOptr2 />
 
     </div>
   );
