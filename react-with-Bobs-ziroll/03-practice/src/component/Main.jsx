@@ -20,14 +20,14 @@ export default function Main() {
   return (
     <>
       <main>
-      {/* <form className="from">
+      <form className="from">
           <input type="text" placeholder="top text" className="form--input" />
           <input
             type="text"
             placeholder="bottom text"
             className="form--input"
           />
-        </form> */}
+        </form>
         <button className="form--button" onClick={clickHandleImage}>
           Get a new meme image 🖼
         </button>
