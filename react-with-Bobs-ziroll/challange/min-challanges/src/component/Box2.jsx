@@ -23,7 +23,7 @@ export default function Box2(prop) {
     return (
       <>
         <main className="main">
-          <div className={mode ? "box1" : "box2"} onClick ={isToggle}>{mode}</div>
+          <div className={mode ? "box1" : "box2"} onClick ={isToggle}></div>
         </main>
       </>
     );
