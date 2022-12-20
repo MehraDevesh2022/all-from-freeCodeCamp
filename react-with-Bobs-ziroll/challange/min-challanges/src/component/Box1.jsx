@@ -35,7 +35,7 @@ const handleClick = (item) =>{
     
    
  })
-
+  // set new array
   setBoxes([...newBox])
   
 }
