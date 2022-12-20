@@ -10,7 +10,7 @@ export default function Box3(props) {
    */
 
    
-   console.log(props.mode + " mode");
+
 
   return (
     <>

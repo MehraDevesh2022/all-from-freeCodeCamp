@@ -8,14 +8,16 @@ function App() {
 
   const isTogle = (propID)=>{
     let newARR  =  squares.map(item =>{
-           if(item.id ===propID){
-            return {
-              id : item.id,
-              on : !item.on
-            }
-           }else{
-            return item;
-           }
+          //  if(item.id ===propID){
+          //   return {
+          //     id : item.id,
+          //     on : !item.on
+          //   }
+          //  }else{
+          //   return item;
+          //  }
+
+          return item.id  === propID ? {...item , on : !item.on} : item
           })
 
         setSquares([...newARR])
