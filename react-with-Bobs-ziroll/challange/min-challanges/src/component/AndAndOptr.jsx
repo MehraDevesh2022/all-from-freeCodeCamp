@@ -7,8 +7,6 @@ export default function AndOptr() {
    * - Only display the <h1> below if there are unread messages
    */
   return (
-    <div>
-     {messages &&  messages.map(msg => ( <h1>You have {msg} unread messages!</h1>))}
-    </div>
+    <div>{messages.length > 0 && <h1>You have {messages.length} unread messages!</h1>}</div>
   );
 }

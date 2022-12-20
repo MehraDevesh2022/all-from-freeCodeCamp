@@ -9,8 +9,7 @@ import AndOptr from "./component/AndAndOptr";
 function App() {
   // const [squares, setSquares] = React.useState(boxes)
 
-  // joke challange :
-  const [isShown, setIsShwon] = React.useState(false)
+
 
   // const isTogle = (propID)=>{
   //   let newARR  =  squares.map(item =>{
@@ -31,10 +30,7 @@ function App() {
   // }
 
 
-  // Joke1.jsx
-  const isToggle = () => {
-    setIsShwon(prvVal => !prvVal)
-  }
+  
  
 
   return (
@@ -56,18 +52,15 @@ function App() {
      ))} */}
 
           {/* Jokes */}
-     {/* {jokesData.map(joke =>(
+     {jokesData.map(joke =>(
       //  console.log(joke);
        <Joke  key = {joke.id} 
               myJoke ={joke}
-              IsShown ={isShown}
-              isToggle = {isToggle}
-               
-       />
+              />
     
-    ) )} */}
+    ) )}
     
-    <AndOptr/> 
+    {/* <AndOptr/>  */}
 
     </div>
   );
