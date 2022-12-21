@@ -1,15 +1,16 @@
-import React from "react";
+export default function Form2(){
 
-export default function Form1() {
- let [formData  , setFormData] = React.useState({
+    let [formData  , setFormData] = React.useState({
     firstName : "",
     lastName : "",
     email : "",
-    textArea : "",
+    comment : "",
+    
  });
 
 const handleChange =(e)=>{
 // e.target.name => this will render if firstname enters else lastName
+console.log(e.target.name);
     setFormData(prvData =>{
         return{
         ...prvData ,
@@ -41,12 +42,11 @@ const handleChange =(e)=>{
           onChange={handleChange}
           value={formData.email}
         />
-        <textArea
+        <textarea
           placeholder="enter comments"
           onChange={handleChange}
-          name="textArea"
-          value ={formData.textArea}
+          name="comment"
+          value ={formData.comment}
         />
       </form>
-    );
 }
