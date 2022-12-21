@@ -1,52 +1,83 @@
-export default function Form2(){
+import React from "react";
+import "./fromStyle.css"
+export default function Form2() {
+  const [formData , setFormData] = React.useState(
+    {
+       firstName : "",
+       lastName  : "",
+       email : "",
+       comment : "",
+        checked : true
+    }
+  )
+  
+  const handleChange  = (e) =>{
+ const {name  , value ,type , checked } = e.target
 
-    let [formData  , setFormData] = React.useState({
-    firstName : "",
-    lastName : "",
-    email : "",
-    comment : "",
-    
- });
+  setFormData(prvData  =>{
+    return {
+      ...prvData,
+      [name]: type === "checkbox" ? checked : value,
+    };
+  })
+        //  setFormData(prvData =>{
+        //     return{
+        //         ...prvData ,
+        //         [e.target.name] : e.target.value
+        //     }
+        //  })
+  }
 
-const handleChange =(e)=>{
-// e.target.name => this will render if firstname enters else lastName
-console.log(e.target.name);
-    setFormData(prvData =>{
-        return{
-        ...prvData ,
-       [ e.target.name] : e.target.value
-        }
-    })
-}
+
     return (
-      <form>
-        {/* use a proprty name for identify terget */}
-        <input
-          type="text"
-          placeholder="First Name"
-          name="firstName"
-          onChange={handleChange}
-          value={formData.firstName}
-        />
-        <input
-          type="text"
-          placeholder="Last Name"
-          name="lastName"
-          onChange={handleChange}
-          value={formData.lastName}
-        />
-        <input
-          type="email"
-          placeholder="enter your email"
-          name="email"
-          onChange={handleChange}
-          value={formData.email}
-        />
+      <>
+        <form>
+          {/* first name */}
+          <input
+            type="text"
+            placeholder="first name"
+            name="firstName"
+            onChange={handleChange}
+            value={formData.firstName}
+          />
+
+          {/* last name */}
+          <input
+            type="text"
+            placeholder="last name"
+            name="lastName"
+            onChange={handleChange}
+            value={formData.lastName}
+          />
+
+          {/* email */}
+          <input
+            type="email"
+            placeholder="email"
+            name="email"
+            onChange={handleChange}
+            value={formData.email}
+          />
+        </form>
+        {/* comment box */}
         <textarea
-          placeholder="enter comments"
-          onChange={handleChange}
+          placeholder="comment"
           name="comment"
-          value ={formData.comment}
+          value={formData.comment}
+          onChange={handleChange}
         />
-      </form>
+
+        {/* check box */}
+        <input
+          type="checkbox"
+          id="isCheckBox"
+          checked={formData.checked}
+          onChange={handleChange}
+          name="checked"
+        />
+
+        <label htmlFor="isFriendly">Are you friendly?</label>
+        <br></br>
+      </>
+    );
 }
