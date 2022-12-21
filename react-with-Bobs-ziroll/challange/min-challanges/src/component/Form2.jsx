@@ -1,5 +1,5 @@
 import React from "react";
-import "./fromStyle.css"
+import "./formStyle.css";
 export default function Form2() {
   const [formData , setFormData] = React.useState(
     {
@@ -75,8 +75,7 @@ export default function Form2() {
           onChange={handleChange}
           name="checked"
         />
-
-        <label htmlFor="isFriendly">Are you friendly?</label>
+  <label htmlFor="isFriendly">Are you friendly?</label>
         <br></br>
       </>
     );
