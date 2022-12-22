@@ -1,11 +1,12 @@
 import React from "react";
 import "./formStyle.css";
-export default function RadioButon() {
+export default function Submit() {
   const [formData, setFormData] = React.useState({
     firstName: "",
     comment: "",
     checked: true,
     employement: "",
+    favColor: "",
   });
 
   const handleChange = (e) => {
@@ -18,9 +19,16 @@ export default function RadioButon() {
     });
   };
 
+
+  const submitHandler =(event)=>{
+  // event.preventdefault(); 
+// sendToapi(formData);
+console.log(formData);
+  }
+
   return (
     <>
-      <form>
+      <form onSubmit={submitHandler}>
         {/* first name */}
         <input
           type="text"
@@ -83,10 +91,29 @@ export default function RadioButon() {
           <label>full-time</label>
           <br></br>
         </fieldset>
+
+        <br></br>
+
+        <label>Whats your fav color</label>
+        <select
+          value={formData.favColor}
+          name="favColor"
+          id="favColor"
+          onChange={handleChange}
+        >
+          <option value="">---choose color---</option>
+          <option value="Orrange">Orrange</option>
+          <option value="Yellow">Yellow</option>
+          <option value="green">green</option>
+          <option value="red">red</option>
+          <option value="black">black</option>
+        </select>
+
+<br></br>
+<br></br>
+        {/* submit */}
+        <button >Submit</button>
       </form>
-
-   
-
     </>
   );
 }

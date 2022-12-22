@@ -1,11 +1,12 @@
 import React from "react";
 import "./formStyle.css";
-export default function RadioButon() {
+export default function Selector() {
   const [formData, setFormData] = React.useState({
     firstName: "",
     comment: "",
     checked: true,
     employement: "",
+    favColor : ""
   });
 
   const handleChange = (e) => {
@@ -84,9 +85,17 @@ export default function RadioButon() {
           <br></br>
         </fieldset>
       </form>
+      <br></br>
 
-   
-
+      <label>Whats your fav color</label>
+      <select value={formData.favColor} name="favColor" id="favColor" onChange={handleChange}>
+       <option value="">---choose color---</option>
+        <option value="Orrange">Orrange</option>
+        <option value="Yellow">Yellow</option>
+        <option value="green">green</option>
+        <option value="red">red</option>
+        <option value="black">black</option>
+      </select>
     </>
   );
 }
