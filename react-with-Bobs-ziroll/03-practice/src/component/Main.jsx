@@ -17,21 +17,46 @@ export default function Main() {
           randomImg : url
          });
   };
+
+
+  const handleText =(e) =>{
+    const {name , value} = e.target
+    setMeme((prvText) => ({
+      ...prvText,
+      [name]: value
+    }));
+   
+  }
   return (
     <>
       <main>
-      <form className="from">
-          <input type="text" placeholder="top text" className="form--input" />
+        <form className="from">
           <input
             type="text"
-            placeholder="bottom text"
+            placeholder="top text"
             className="form--input"
+            name="toptext"
+            value={meme.toptext}
+            onChange={handleText}
+          />
+
+          <input
+            type="text"
+            placeholder="bottom-text"
+            className="form--input"
+            name="Bottomtext"
+            value={meme.Bottomtext}
+            onChange={handleText}
           />
         </form>
         <button className="form--button" onClick={clickHandleImage}>
           Get a new meme image 🖼
         </button>
-        <img src ={meme.randomImg} alt="" className="main-img" />
+        <div className="meme">
+          <img src={meme.randomImg} alt="" className="meme--image" />
+          <h2 className="meme--text top">{meme.toptext}</h2>
+          <h2 className="meme--text bottom">{meme.Bottomtext}</h2>
+        </div>
       </main>
     </>
   );
