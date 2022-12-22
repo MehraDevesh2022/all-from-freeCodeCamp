@@ -1,16 +1,16 @@
 body{
  
-  background: #282D35;
+  /* background: #282D35; */
   margin: 0;
   padding: 0;
   color: white;
   font-family: 'Inter', sans-serif;
 }
-.nav{
+nav{
     display: flex;
     padding: 15px;
      height: 5rem;
-    background: #21222A;
+    /* background: #21222A; */
     align-items: center;
     font-family: 'Inter', sans-serif;
 
@@ -42,8 +42,9 @@ body{
     margin: 0;
     background-image: url("./reactjs-icon\ 2.png");
     background-repeat: no-repeat;
-   background-position: right 90%;
+   background-position: right 20%;
     background-size: 9rem;
+    height: 100vh;
 }
 .main-heading{
      letter-spacing: -0.05em;
@@ -71,4 +72,80 @@ li::marker{
 }
 .main--icon{
    height: 20rem;
+}
+
+/* .dark{
+  height: 1.5rem;
+  width: 1.5rem;
+  border: 4px solid rgb(11, 10, 10);
+  border-radius: 50%;
+  background-color: white;
+} */
+.light{
+  height: 1.5rem;
+  width: 1.5rem;
+  border: 4px solid white;
+  border-radius: 50%;
+  background-color: black;
+}
+
+.toggler {
+    display: flex;
+    align-items: center;
+}
+
+.toggler p {
+    font-size: 1rem;
+    margin-left: 15px;
+    font-weight: 700;
+}
+
+.toggler--slider {
+    width: 30px;
+    height: 16px;
+    background-color: #2B283A;
+    border-radius: 2rem;
+    margin-inline: 7px;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid black;
+    box-sizing: content-box;
+}
+
+nav.dark .toggler--slider {
+    border-color: white;
+    background-color: #F5F5F5;
+}
+
+.toggler--slider--circle {
+    height: 13px;
+    width: 13px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+nav.dark .toggler--slider--circle {
+    background-color: black;
+}
+
+.toggler--light {
+    color: #2B283A;
+}
+
+nav.dark .toggler--light {
+    color: #918E9B;
+}
+
+.toggler--dark {
+    color: #D5D4D8;
+}
+
+nav.dark .toggler-dark {
+    color: #FFFFFF;
+}
+
+nav.dark .toggler--slider {
+    justify-content: flex-end;
 }
