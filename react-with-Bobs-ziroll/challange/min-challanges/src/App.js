@@ -7,7 +7,7 @@ import jokesData from "./component/jokesData";
 import Joke from "./component/Joke1";
 import AndOptr from "./component/AndAndOptr";
 import AndAndOptr2 from "./component/AndAndOptr2";
-import Form from "./component/Form";
+import FormApp from "./component/FormApp";
 function App() {
   // const [squares, setSquares] = React.useState(boxes)
 
@@ -69,7 +69,7 @@ function App() {
        {/* <AndAndOptr2 /> */}
 
 
-<Form/>
+<FormApp/>
 
     </div>
   );

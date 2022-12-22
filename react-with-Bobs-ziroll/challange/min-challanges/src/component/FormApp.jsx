@@ -4,14 +4,17 @@ import RadioButon from "./Form3"
 import Form1 from "./Form1"
 import Selector from "./Form4"
 import Submit from "./Form5"
-export default function Form(){
+import Task1 from "./FormPractice/Task1"
+export default function FormApp(){
     return(
         <>
           {/* <Form1/> */}
           {/* <Form2/> */}
           {/* <RadioButon/> */}
           {/* <Selector></Selector> */}
-          <Submit/>
+          {/* <Submit/> */}
+
+          <Task1/>
         </>
     )
 }
