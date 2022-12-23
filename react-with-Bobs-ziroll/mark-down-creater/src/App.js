@@ -20,7 +20,7 @@ console.log(data);
 export default function App() {
   const [notes, setNotes] = React.useState(
     // this is call lazzy initliztion mean while first time page render only that time local storage call
-    () => JSON.parse(localStorage.getItem('notes')) || []
+     JSON.parse(localStorage.getItem('notes')) || []
   )
   const [currentNoteId, setCurrentNoteId] = React.useState(
     (notes[0] && notes[0].id) || ""
@@ -47,18 +47,30 @@ React.useEffect(function() {
   }
 
   function updateNote(text) {
-    setNotes(oldNotes => oldNotes.map(oldNote => {
-      return oldNote.id === currentNoteId
-        ? { ...oldNote, body: text }
-        : oldNote
-    }))
-    localStorage.setItem('notes' , JSON.stringify(notes))
+    let newArr =[];
+    setNotes(oldNotes => {
+      for(let i=0; i<oldNotes.length; i++){
+        let noteObj = oldNotes[i];
+        if(noteObj.id == currentNoteId){
+               newArr.unshift({...noteObj , body : text})
+        }else{
+         newArr.push(noteObj);
+        }
+      }
+      return newArr;
+    })
   }
 
   function findCurrentNote() {
     return notes.find(note => {
       return note.id === currentNoteId
     }) || notes[0]
+  }
+
+  function deleteNote(e , noteId){
+    e.stopPropagation();
+    setNotes(prevNotes  => prevNotes.filter(note => note.id !== noteId))
+
   }
 
   return (
@@ -76,6 +88,7 @@ React.useEffect(function() {
               currentNote={findCurrentNote()}
               setCurrentNoteId={setCurrentNoteId}
               newNote={createNewNote}
+              deleteNoteFn={deleteNote}
             />
             {
               currentNoteId &&
@@ -83,6 +96,7 @@ React.useEffect(function() {
               <Editor
                 currentNote={findCurrentNote()}
                 updateNote={updateNote}
+              
               />
             }
           </Split>
