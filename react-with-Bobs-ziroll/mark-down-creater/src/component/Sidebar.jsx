@@ -1,18 +1,23 @@
 import React from "react";
 import "./style.css"
 export default function Sidebar(props) {
-  const noteElements = props.notes.map((note, index) => (
-    <div key={note.id}>
-      <div
-        className={`title ${
-          note.id === props.currentNote.id ? "selected-note" : ""
-        }`}
-        onClick={() => props.setCurrentNoteId(note.id)}
-      >
-        <h4 className="text-snippet">Note {index + 1}</h4>
-      </div>
-    </div>
-  ));
+    
+  const noteElements = props.notes.map((note) => {
+             let str =JSON.stringify(note.body)
+               let bodyArr =str.split("\\")
+ return (
+   <div key={note.id}>
+     <div
+       className={`title ${
+         note.id === props.currentNote.id ? "selected-note" : ""
+       }`}
+       onClick={() => props.setCurrentNoteId(note.id)}
+     >
+       <h4 className="text-snippet"> {bodyArr[0]} </h4>
+     </div>
+   </div>
+ );
+});
 
   return (
     <section className="pane sidebar">

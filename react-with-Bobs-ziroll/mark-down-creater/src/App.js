@@ -6,27 +6,44 @@ import Split from "react-split"
 import { nanoid } from "nanoid"
 
 /**
- * Challenge: Spend 10-20+ minutes reading through the code
- * and trying to understand how it's currently working. Spend
- * as much time as you need to feel confident that you 
- * understand the existing code (although you don't need
- * to fully understand everything to move on)
- */
+     * Challenge:
+     * 1. Every time the `notes` array changes, save it 
+     *    in localStorage. You'll need to use JSON.stringify()
+     *    to turn the array into a string to save in localStorage.
+     * 2. When the app first loads, initialize the notes state
+     *    with the notes saved in localStorage. You'll need to
+     *    use JSON.parse() to turn the stringified array back
+     *    into a real JS array.
+     */
 console.log(data);
 
 export default function App() {
-  const [notes, setNotes] = React.useState([])
+  const [notes, setNotes] = React.useState(
+    // this is call lazzy initliztion mean while first time page render only that time local storage call
+    () => JSON.parse(localStorage.getItem('notes')) || []
+  )
   const [currentNoteId, setCurrentNoteId] = React.useState(
     (notes[0] && notes[0].id) || ""
   )
+console.log(notes);
+
+
+// side effect process handle by use effect
+React.useEffect(function() {
+  localStorage.setItem("notes" , JSON.stringify(notes))
+}, [notes])
+
+
+
 
   function createNewNote() {
     const newNote = {
       id: nanoid(),
       body: "# Type your markdown note's title here"
     }
+
     setNotes(prevNotes => [newNote, ...prevNotes])
-    setCurrentNoteId(newNote.id)
+      setCurrentNoteId(newNote.id)
   }
 
   function updateNote(text) {
@@ -35,6 +52,7 @@ export default function App() {
         ? { ...oldNote, body: text }
         : oldNote
     }))
+    localStorage.setItem('notes' , JSON.stringify(notes))
   }
 
   function findCurrentNote() {
