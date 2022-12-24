@@ -15,7 +15,10 @@ export default function App() {
   function allNewDice() {
     let randomArr = [];
     for (let i = 0; i < 10; i++) {
-      randomArr[i] = Math.trunc(Math.random() * 6) + 1;
+      randomArr[i] = {
+        number: Math.trunc(Math.random() * 6) + 1,
+        status : true,
+      }
     }
     return randomArr;
   }
@@ -27,7 +30,11 @@ function rollDice(){
   const [myDice, setMyDice] = useState(allNewDice())
 
   let diceElm = myDice.map((diceVal, index) => (
-                  <Die value={diceVal} key={index} />))
+                  <Die
+                   value={diceVal.number} 
+                   key={index} 
+                   isFalse = {diceVal.status }
+                   />))
   return (
     <main>
       <div className="dice-container">

@@ -1,8 +1,12 @@
 import React from "react";
 
 export default function Die(props) {
+   console.log(props.isFalse);
+    const myStyle = {
+      backgroundColor: props.isFalse ? "#59E391" : "white",
+    };
   return (
-    <div className="die-face">
+    <div className="die-face" style={myStyle}>
       <h2 className="die-num">{props.value}</h2>
     </div>
   );
