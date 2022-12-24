@@ -27,25 +27,23 @@ export default function App() {
   }
 
 function holdId(diceId){
-  let newArr =[];
-  setMyDice(prvDices => {
-    prvDices.map(dice =>{
-        if(dice.id ==diceId){
-          newArr.push({...dice , id : nanoid.id})
-        }else{
-          newArr.push(dice)
-        }
-        return newArr
-    }) 
-     
-    
-  })
-   
+ setMyDice(prvDice  => prvDice.map(dice => {
+  return dice.id ===diceId ? {...dice , status : !dice.status} : dice
+ }))
 }
-  
-
 function rollDice(){
-  setMyDice(allNewDice());
+ 
+ setMyDice(prvDice => prvDice.map(dice =>{
+     if(dice.status ===true){
+        return dice
+     }else{
+       return ({
+         number: Math.trunc(Math.random() * 6) + 1,
+         status: false,
+         id: nanoid()
+       })
+     }
+ }))
 }
 
   
