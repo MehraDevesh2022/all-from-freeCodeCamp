@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Die(props) {
-   console.log(props.isFalse);
+  //  console.log(props.isFalse);
     const myStyle = {
       backgroundColor: props.isFalse ? "#59E391" : "white",
     };
