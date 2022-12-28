@@ -5,6 +5,7 @@ export default function Sidebar(props) {
   const noteElements = props.notes.map((note) => {
              let str =JSON.stringify(note.body)
                let bodyArr =str.split("\\")
+               
  return (
    <div key={note.id}>
      <div
