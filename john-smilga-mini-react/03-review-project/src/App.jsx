@@ -26,6 +26,22 @@ function handleNext(){
   }
 }
 
+React.useEffect(() => {
+    let clerId = setInterval(() =>{
+                 if (currUser === userData.length - 1) {
+                   setCurrUser(0);
+                 } else {
+                   setCurrUser((prvVal) => prvVal + 1);
+                 }
+    } ,5000)
+  
+  
+  return () => {
+    clearInterval(clerId);
+  };
+}, [currUser])
+
+
 // handle random button
 function randomUser(){
  let idx = Math.trunc(Math.random() * userData.length); 
