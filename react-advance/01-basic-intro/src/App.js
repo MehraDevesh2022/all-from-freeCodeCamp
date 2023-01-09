@@ -16,7 +16,7 @@ function App() {
       <Propstype width ={20} height ={30}  boxColor ={'red'}/>
       <Propstype  height ={30}   boxColor ="aqua"/> */}
 
-
+      {/* Challenge */}
       <RoundedImg src="https://picsum.photos/id/237/300/300" borderRadius="10px" />
 
     </>
