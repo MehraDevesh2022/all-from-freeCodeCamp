@@ -1,16 +1,16 @@
 import React from 'react'
-import ThemeContext from './themeContext';
+import {ThemeContextConsumer} from './themeContext';
 
 export default function Header() {
 
  
   return (
-    <ThemeContext.Consumer>
-      {(theme) => (
-        <header className="light-theme">
-          <h2>{theme} theme</h2>
+    <ThemeContextConsumer>
+      {({theme}) => (
+        <header className={`${theme}-theme`}>
+          <h2>{theme} theme </h2>
         </header>
       )}
-    </ThemeContext.Consumer>
+    </ThemeContextConsumer>
   );
 }

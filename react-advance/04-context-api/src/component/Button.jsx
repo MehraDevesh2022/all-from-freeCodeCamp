@@ -2,7 +2,7 @@ import React  from 'react'
 import ThemeContext from './themeContext'
 import PropTypes from "prop-types";
 function Button(props) {
- let theme = props.theme
+ let { theme, toggleTheme } = props;
   // using consumer 
   return (
     //1st => when we want context value used in this component every where we wanna use this component 
@@ -17,7 +17,7 @@ function Button(props) {
 
     //2nd when we don't wanna button with theme property every so then put consumer property in button property where we are renderiing it
     
-     <button className={`${theme}-theme`} >Switch Theme</button>
+     <button className={`${theme}-theme`} onClick ={toggleTheme} >Switch Theme</button>
   );
 }
 // it will make sure props has either dark value of light value consider only
