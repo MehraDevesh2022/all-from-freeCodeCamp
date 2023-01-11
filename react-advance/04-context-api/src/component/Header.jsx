@@ -8,7 +8,7 @@ export default function Header() {
     <ThemeContextConsumer>
       {({theme}) => (
         <header className={`${theme}-theme`}>
-          <h2>{theme} theme </h2>
+          <h2>{theme}-theme </h2>
         </header>
       )}
     </ThemeContextConsumer>
